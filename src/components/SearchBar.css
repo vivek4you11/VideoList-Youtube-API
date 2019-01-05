@@ -1,0 +1,9 @@
+.ui.label > .icon {
+  width: auto;
+  margin: 0px 30px 0 30px;
+}
+
+.search-bar {
+  margin-top: 10px !important;
+  background-color: aliceblue !important;
+}

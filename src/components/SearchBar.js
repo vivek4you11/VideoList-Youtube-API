@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './SearchBar.css';
 class SearchBar extends Component {
   state = { term: '' };
 
@@ -11,7 +11,6 @@ class SearchBar extends Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    //callback from parent component AIzaSyBAPmVeuE0ubRTfmY9LnRSlvxlHB95ivL4
     this.props.onFormSubmit(this.state.term);
   };
 
@@ -20,8 +19,12 @@ class SearchBar extends Component {
       <div className="search-bar ui segment">
         <form onSubmit={this.onFormSubmit} className="ui form">
           <div className="field">
-            <label>Video Search</label>
-            <input type="text" value={this.state.term} onChange={this.onInputChange} />
+            <div className="ui right labeled input">
+              <input type="text" placeholder="Search..." value={this.state.term} onChange={this.onInputChange} />
+              <div className="ui basic label" style={{ backgroundColor: 'gainsboro' }}>
+                <i className="search icon" onClick={this.onFormSubmit} />
+              </div>
+            </div>
           </div>
         </form>
       </div>
